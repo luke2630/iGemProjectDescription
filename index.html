@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Canyon Crest Academy Project Design</h1>
+    <div class="div">
+        <h2>Overview</h2>
+        <p>Collagen is the most abundant protein in many mammalian organisms and it has proven to be a great biomaterial. However, the current source of collagen is from animal skin, bones, tendons, or cartilage, meaning mass producing collagen would mean animals would have to be slaughtered. It is not an ethical, sustainable, nor environmentally responsible method of extraction so our goal is to create an alternative method for mass producing collagen for various biomedical applications. We choose to express a bacterial collagen-like protein, Scl, in yeast. Our process can be broken into three parts: expression, purification, and implementation, with each part playing a crucial role in our project outline. The primary component of our Expression part is creating our plasmid; we put a lot of time and consideration into considering the various aspects to replicate human collagen. Our concern with the purification part of our process was purifying the bacterial collagen from host proteins with an environmentally friendly method, which led us to choose pepsin for the proteolysis. Finally, the most important aspect of our project is the implementation. Our collagen is versatile and we have proposed to use it in various applications, including collagen thread, gel, and felts.</p>
+    </div>
+    <div class="div">
+        <div>
+            <h2>Expression</h2>
+            <h3>Designing the Constructs (Why the Bacterial gene in yeast)</h3>
+            <p>Scl, <i>streptococcal</i> collagen-like protein, is a bacterial collagen that has been well-documented in recent years. The key distinction between bacterial and mammalian collagen is the hydroxyproline post-translational mechanisms: mammalian collagen requires this complex process whereas bacterial collagen does not. Since dealing with mammalian collagen will be extremely difficult to work with and mass produce, scl2 was the collagen source of our choice. Past studies show that scl2 has similar enough properties as human collagen to be used as biomaterials. Scl2 is the preferred bacterial collagen for our project because it has better structural integrity with a longer protein expression compared to scl1. Scl2 also has more documentation and we were able to gather more information about it during our literature search. Other forms of bacterial collagen like Bcl (Bacillus collagen-like), Pcl (Pneumococcal collagen-like), Bucl (Burkholderia collagen-like) have a significantly smaller literature basis and would be harder to work with.</p>
+            <p>Most types of scl proteins, including scl2, are naturally expressed in a human pathogen, <i>Streptococcus pyogenes</i>, also known as Group A <i>streptococcal</i> (GAS). The scl proteins are virulence factors of S. pyogenes, and it contributes to the formation of biofilm adhesion and infection to different species (<a target="#blank" href="https://linkinghub.elsevier.com/retrieve/pii/S002192582044150X">Squeglia et al 14</a>). The scl2 is made of several parts, from the V domain, the triple helical CL domain, and the tail.</p>
+            <img src="image.jpg" alt="Image in Doc">
+            <p>Our project aims to express scl2 through Saccharomyces cerevisiae, a type of yeast. Though the idea of expressing bacterial collagen in yeast may seem strange, past studies have shown that expressing bacterial collagen in E.coli is problematic and the yield is often too low. Our team saw that expressing scl2 through yeast will be a novel experiment that also gets higher yields than bacterial expression. Though there have been significant efforts at efficiently producing human or other animal collagen through yeast, there has been no studies of bacterial collagen in yeast. Past studies suggest using scl2 to produce collagen in yeast to increase its chain length (<a target="#blank"href="https://www.google.com/url?q=https://doi.org/10.3389/fchem.2014.00040&sa=D&source=editors&ust=1632117136876000&usg=AOvVaw1UTvRT5efeGVfVD2qyWDnR">An et al 14</a>).
+            </p>
+            <p>When building the plasmid to express the scl2, we had to add the 5’UTR in front of the codon to make sure the triple helical structure of the bacterial collagen was produced.</p>
+            <img src="unknown" alt="[general image of collagen or something related to cows]">
+        </div>
+        <div>
+            <h3>Choosing the Right Promoters and Terminators</h3>
+            <p>Choosing the optimal promoters and terminators are crucial in initiating expression of our scl2 construct, especially since we chose to express a bacterial protein in a eukaryotic organism. Although promoters are well-known to initiate enzyme docking and expression of a recombinant gene, the careful consideration of terminators is often neglected due to a common assumption that the sequence after the gene and the poly-A-tail folding is unimportant. However, a study by Curran et. al, 2013, challenged this assumption by demonstrating a significantly (3.5x) higher expression of fluorescent proteins when high-capacity yeast terminators were used. Because of this, we decided to choose a high-capacity natural yeast terminator correlated with the strongest expression from their paper, PRM9, which was first documented by Miller et. al, 2011.</p>
+            <img src="image.jpg" alt="Image on doc">
+            <p>To choose our promoter, we had several criteria we wanted to fulfill: the promoter should exhibit higher protein expression compared to commonly used promoters, and it should be constitutive and synthetic. Natural promoters with a high variance across different experiments have a  lower predictability and may make their heterologous pathways unfavorable (Decoene et. al, 2019).  In other words, synthetic promoters may be optimal for genetic engineering purposes as compared to natural promoters, as it reduces the risk of off-target binding to target the expression of recombinant constructs. After searching the literature on the topic, we found that the synthetic TEF1-derived promoters documented by Decoene et. al, 2019, fulfilled all of our criteria. As TEF-1is a well-characterized strong promoter in S. <i>cerevisiae</i>, the study authors randomized their elucidated sequence of the TEF1 minimal core promoter. They also discovered that an upstream activating sequence (UAS) around 100 bp in length dramatically improved fluorescence. The UAS is thought to be where transcription factors may bind to increase docking to the core promoter, where RNA polymerase II initiates transcription. In addition, a 5’UTR sequence usually located after the core promoter was included, as it is known to play a major role in the translation initiation process. 
+            </p>
+            <p>Thus, we chose the most optimal combination of the upstream activating sequence and the core promoter developed for in their study for use in <i>Collagene</i>. The optimal UAS-core promoter pair was named UAS<sup>FEC</sup>cp<sup>TEF</sup>-6I, which we kept under the same name when documenting these components as new parts.</p>
+            <img src="unknown" alt="image from doc">
+        </div>
+        <div>
+            <h3>Shortening the Plasmid</h3>
+            <p>An important modification in our plasmid design was cutting the LacZ gene and f1 ori. To do this, we conducted a PCR with primers designed to amplify only the shorter fragment of DNA—no LacZ and f1 ori. The amplification of just the shorter segment made the remaining presence of excess DNA inconsequential. Effectively, the final plasmid was shorter than before. This is important because it increases the productivity of our protein expression, a key point in our goal of mass production. The smaller size also gives the benefit of easier transformation into a host. Larger molecules typically struggle more than smaller ones when entering the membrane of a host cell.
+            </p>
+        </div>
+        <div>
+            <h3>Putting it all together (Into a plasmid)</h3>
+            <p>We struggled with ordering our plasmid as IDT and Twist were unable to synthesize the full sequence. The problem stemmed from repeating triplets of nucleotides in the CL-domain of the Scl2 gene. However, these repeating sequences are necessary for the triple helical structure of Scl2. Our team adapted to the problem and ordered the full sequence in multiple pieces.
+            </p>
+            <p>Our first design was buying the sequence in over 10 segments: promoter, His-tags and globular domain, enzyme cut site, 7 Scl2 segments, and the terminator. Assembling this would have been extremely difficult and highly susceptible to error. Instead, we ordered it in three sequences and amplified them with 6 interweaving primers. Each segment was amplified with only its accompanying forward and reverse primer. Fragment 1 contained gblock, cpTEF promoter, and 5’UTR. Fragment 2 contained scl2 encoding DNA. Fragment 3 finished with the PRM9 terminator. Notably, we did not need to delete the secretory signal which had the result of maintaining the integrity of our DNA sequence. With the primers and fragments prepared, DNA assembly was the next step.
+            </p>
+            <ul>
+                <li>Ordering the parts, small things like adding a 5’UTR, linker sequences, etc.</li>
+                <li>WE DID NOT NEED to delete secretory signal</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Assemblies in Parallel</h3>
+            <p>Since our project revolves around expressing the scl2 gene through yeast, one of our methods for transforming the S. <i>Cerevisiae</i> is yeast assembly, also known as LiOAc (lithium acetate) transformation.  Yeast assembly allows users to order recombinant plasmids inside the yeast in a single step, as opposed to other methods which often require the plasmid to be fully ordered before being inserted and expressed by yeast. By doing the entire process in the yeast, the process takes much less steps and therefore more error-proof. </p>
+            <p>The other method we chose was Gibson assembly, a procedure that allows for the assembly of multiple linear DNA fragments and avoids common errors associated with assembling plasmids. Gibson will be used to assemble the backbone and the scl2 plasmid part. The Gibson Assembly is a standard process for assembling plasmids for E Coli., and can be beneficial for yeast plasmid assembly due to its success with E Coli. Assembly. Thus, the Gibson Assembly essentially serves as our control assembly method. Due to the codon optimization of the yeast the transformation may be less efficient because the E <i>coli</i>. is not trained to use the proteins. 
+            </p>
+            <p>As mentioned, The yeast assembly and Gibson assembly were done in parallel to see which process was more efficient. Both methods are known to be more efficient than the standard restriction enzyme-based cloning method. </p>
+            <img src="unknown" alt="image from the doc">
+            <img src="unknown" alt="[image of plasmid and putting things in the plasmid]">
+        </div>
+    </div>
+    <div class="div">
+        <h2>Purification</h2>
+        <div>
+            <h3>His tag purification and Modified TCA Extraction</h3>
+            <p>The His-Tag and Modified TCA extraction  is useful for protein purification. Since the His-tag and Modified TCA extraction will achieve the same purpose, we will do them in parallel to see which method produces better results. Before deciding on Modified TCA extraction, we initially planned to use glass bead protein extraction, then considered TCA extraction, and then considered the extraction method in the Peng et al. 2014 study. A problem with collagen lies in its denaturation slightly above body temperature. Xu et al. 2010 showed that the stability at pH 2.2 of S. pyogenes collagen was 25.7 C. Therefore, the TCA extraction has to be below 28 degrees, which is why we are using a Modified TCA extraction which requires less time, so excessive protein degradation is avoided. Therefore, we finally decided to use the Modified TCA extraction method from the study. 
+            </p>
+            <h3>Proteolysis</h3>
+            <p>We used the Peng et al. 2014 study to compare and contrast the different enzymes that could be used for Proteolysis. Proteolysis is used to remove contaminating host proteins to produce pure bacterial collagen proteins. In the study and figure, trypsin and chymotrypsin were shown to be ineffective, and pepsin was shown to be the best enzyme for removing remaining host proteins. 
+            </p>
+            <img src="unknown" alt="image from doc">
+            <p>Figure from study: Chymotrypsin (C), papain (Pa), M indicates protein molecular weight standards (kDa)</p>
+            <p>Papain was found to be effective as well. Papain is a natural enzyme derived from papayas that is used in the leather industry to hydrolyze collagen peptide bonds and has a similar function as pepsin. Papain has the added benefit of being a non-animal protease, allowing for a completely non-animal purification system. However, pepsin also hydrolyzes collagen peptide bonds, is further studied, used more often to make collagen hydrogels, and is more economical for our purposes than papain is, which is why we decided to use pepsin for Proteolysis.
+            </p>
+        </div>
+    </div>
+    <div class="div">
+        <h2>Implementation</h2>
+        <div>
+            <h3>Choosing our Implementation</h3>
+            <p>When considering how to use the collagen we had created in an effective and applicable way, there were a myriad of concerns to address: could we be sure that our collagen products would be an improvement from the status quo? If not, how would we make it that way? How difficult would it be to guarantee structural integrity of the products — and if we could do so, what would the tradeoff be?
+            </p>
+            <p>To answer these questions, we consulted numerous professors (read more at our Human Practices/Attributions/idk page), who - using their experience with collagen production and utilisation - helped us determine what would be feasible, given our resources and materials.
+            </p>
+            <p>Overall, the three implementations we decided on - thread, gel, and felt - displayed the potential of our yeast-expressed collagen the best. All extremely different in their manufacturing processes and applications, they were created from the same initial material - demonstrating both its versatility and how its uses might evolve in the future, given the appropriate amount of time dedicated to research and development.
+            </p>
+            <img src="unknown" alt="[any collagen product, probably some form of beauty/cosmetic product since that is the most popular use of collagen">
+        </div>
+        <div>
+            <h3>Coagulation</h3>
+            <p>To make our collagen usable in a practical instance, it needed to be in a functional triple helical structure - hence the need for coagulation. Collagen molecules are in their most stable, precipitated state at a neutral pH, rather than an acidic or basic pH (<i>Hayashi et al 73</i>). We used the solubility of collagen in an acidic solution to form our collagen stock solution, and neutralized the solution when coagulation was necessary. We did so by extruding the collagen into a buffered solution of polyethylene glycol with a pH of 7.55, allowing the collagen to stabilise (<i>Cavallaro et al 94</i>).
+            </p>
+        </div>
+        <div>
+            <h3>Thread</h3>
+            <p>When designing our thread, our primary reference was “Collagen Fabrics as Biomaterials,” written  in 1994 regarding the derivation of collagen, manufacture of thread, and production of fabrics using unique weaving patterns for the purpose of wound treatment (<i>Cavallaro et al 94</i>). To modify the procedures provided according to the properties and structure of our yeast-expressed collagen - in addition to the materials available to us - we contacted many experts to give us feedback on our ideas and potentially offer new ones.</p>
+            <p>One of the professors we spoke to was Dr. Samuel Hudson of Wilson College, an expert in textile engineering. He helped us develop effective fiber testing procedures, in addition to manufacturing methods that would ensure the structural stability of our thread. He also provided us with numerous options for crosslinking reagents, in addition to their properties and hazards.
+            </p>
+            <p>Additionally, we consulted Dr. John F. Cavallaro, an author of the paper we had been using as reference. He helped us to solidify our procedures, determine the final purpose and implementations of our project, and gave us ideas regarding how we might source the collagen we needed. At first, we planned on just creating sutures from our collagen, but Dr. Cavallaro gave us ideas for numerous different applications that would properly demonstrate the versatility and practicality of our product - rather than simply something that had previously been researched or discovered.
+            </p>
+            <p>Afterward, we contacted Dr. Oded Shoseyov of the Hebrew University of Jerusalem, who gave us remarkable insight on crosslinking reagents, our wet-spinning apparatus, and collagen sourcing and properties. Initially, we had planned on using UV crosslinking to strengthen the collagen, but after learning from Dr.Shoseyov that it might be too weak, we came to the conclusion that glutaraldehyde would be a better alternative, considering our goals.
+            </p>
+            <p>When it came to the issue of finding a wet-spinning machine for the process of manufacturing thread, we were inspired by a previous iGEM project by GreatBay_SZ in 2019, who created a synthetic spider silk and 3D-printed their spinning machine. We were able to print ours as well, and, in doing so, we permitted ourselves greater autonomy in both our methods and design.
+            </p>
+            <p>In essence, the final wet-spinning process involves the following steps:</p><img src="unknown" alt="[INCLUDE ANIMATION HERE ALONG WITH STEPS">
+            <img src="unknown" alt="image in doc">
+            <ol>
+                <li>Collagen is extruded into a coagulation bath, allowing it to stabilise - consequently forming a continuous thread.
+                </li>
+                <li>The thread is then soaked in a rinse bath, which helps it to maintain its constant pH.
+                </li>
+                <li>It is passed through an isopropanol bath, which partially dehydrates it.
+                </li>
+                <li>It is drawn over a series of pulleys and dried under tension.</li>
+                <li>It is then cross-linked with glutaraldehyde.</li>
+            </ol>
+        </div>
+        <div>
+            <h3>Gel and Felt</h3>
+            <p>Similar to the manufacturing process of the thread, the primary issue with both the gel and the felt was that of structural integrity and coagulation. We were able to solve both issues through glutaraldehyde crosslinking. The next steps then became optimising each one for their particular functions.
+            </p>
+            <p>With the gel, the goal was to get it structurally sound while still allowing it to retain its gel-like texture. With a centrifuge, we were able to achieve that.
+            </p>
+            <p>When designing the felt, we studied the processes of actual felt-making in efforts to better understand the science behind it - thus allowing us to replicate desired aspects to the best of our ability with the materials we had. Generally, felt is made via heat, water, and pressure, with the fibres condensed and pressed together, which permanently interlocks them, creating the matted fabric (<i>Sewport Support Team</i>). Depending on the materials used, the fabric can have different properties, but overall, the most desirable quality of felt is that it involves no knitting or weaving. It serves as one large, flattened piece, which both ensures its structural integrity and greatly minimizes the amount of extra work that goes into production. With our felt, given the restriction of how collagen might be difficult to work with, we decided to follow procedures similar to that of our gel; the differences, however, taking into account the criteria the felt fabric needed to fulfil (retained solidity, thickness, etc.).</p>
+        </div>
+    </div>
+    <div class="div">
+        <h2>References (combine later)</h2>
+    </div>
+</body>
+</html>

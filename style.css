@@ -1,0 +1,29 @@
+body {
+    background-image: linear-gradient(to left top, #c482de, #b781e0, #a980e1, #9a80e2, #8a7fe3, #6c8aea, #4893ee, #009bed, #00ace5, #00b9d4, #31c3bf, #70caad);
+    color: white;
+    width: 80%;
+    padding-left: 10%;
+    z-index:0;
+}
+
+.div {
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px white solid;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0px 5px 5px rgba(250,250,250,0.5);
+    margin-bottom: 2rem;
+}
+
+p {
+    text-indent: 2rem;
+}
+
+a {
+    color:white;
+}
+
+/*
+color saver: rgb(42, 39, 39)
+*/
